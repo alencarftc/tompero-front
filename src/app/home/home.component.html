@@ -1,0 +1,13 @@
+<tp-default-layout>
+    <div>
+        <tp-carousel></tp-carousel>
+    </div>
+
+    <ul>
+        <li *ngFor="let recipe of recipes">
+            <tp-recipe-item 
+                [recipe]="recipe">
+            </tp-recipe-item>
+        </li>
+    </ul>
+</tp-default-layout>

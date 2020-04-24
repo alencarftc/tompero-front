@@ -1,0 +1,14 @@
+header,
+footer {
+    height: 50px;
+}
+
+main {
+    min-height: calc(100vh - 100px);
+}
+
+main,
+header,
+footer {
+    padding: 10px 25px;
+}
