@@ -1,28 +1,28 @@
 <ngb-carousel
-[showNavigationArrows]="true" 
-[showNavigationIndicators]="true"
-interval="12000"
-[keyboard]="true"
-[pauseOnHover]="true"
-[wrap]="true"
-[activeId]="'secondSlide'"
->
+  [showNavigationArrows]="true" 
+  [showNavigationIndicators]="true"
+  interval="8000"
+  [keyboard]="true"
+  [pauseOnHover]="true"
+  [wrap]="false"
+  [activeId]="'firstSlide'"
+  >
   <ng-template ngbSlide id="firstSlide">
     <div class="picsum-img-wrapper">
-      <img src="assets/img-01.jpeg" alt="Angular Carousel 1">
+      <img src="../../../../assets/1.jpeg" alt="Angular Carousel 1">
     </div>
     <div class="carousel-caption">
-      <h3>Title Goes Here</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3>Frango grelhado à chapa grega</h3>
+      <a href="#">Ver receita.</a>
     </div>
   </ng-template>
   <ng-template ngbSlide id="secondSlide">
     <div class="picsum-img-wrapper">
-      <img src="assets/img-02.jpeg" alt="Angular Carousel 2">
+      <img src="../../../../assets/2.jpg" alt="Angular Carousel 2">
     </div>
     <div class="carousel-caption">
-      <h3>Title Goes Here</h3>
-      <p>Consectetur tortor volutpat pretium.</p>
+      <h3>Espaguete au tofu</h3>
+      <a href="#">Ver receita.</a>
     </div>
   </ng-template>
 </ngb-carousel>

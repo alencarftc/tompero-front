@@ -3,12 +3,14 @@ footer {
     height: 50px;
 }
 
-main {
-    min-height: calc(100vh - 100px);
-}
-
-main,
+main.padding-true,
 header,
 footer {
     padding: 10px 25px;
 }
+
+main {
+    min-height: calc(100vh - 100px);
+    padding: 20px 0;
+}
+

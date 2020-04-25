@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'tp-default-layout',
@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./default-layout.component.scss']
 })
 export class DefaultLayoutComponent {
+  @Input() padding: boolean
 }
