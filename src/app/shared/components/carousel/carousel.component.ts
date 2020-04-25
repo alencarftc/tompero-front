@@ -1,39 +1,15 @@
-import { Component, AfterViewInit, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'tp-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements AfterViewInit {
-  name = 'Angular';
-  slideNo = 0;
-  withAnim = true;
-  resetAnim = true;
+export class CarouselComponent implements OnInit {
 
-  @ViewChild('myCarousel', { static: true }) myCarousel: NguCarousel<any>;
-  carouselConfig: NguCarouselConfig = {
-    grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
-    load: 3,
-    interval: {timing: 4000, initialDelay: 1000},
-    loop: true,
-    touch: true,
-    velocity: 0.2
-  }
-  carouselItems = [1, 2, 3];
+  constructor() { }
 
-  constructor(private cdr: ChangeDetectorRef) {}
-
-  ngAfterViewInit() {
-    this.cdr.detectChanges();
+  ngOnInit() {
   }
 
-  reset() {
-    this.myCarousel.reset(!this.resetAnim);
-  }
-
-  moveTo(slide) {
-    this.myCarousel.moveTo(slide, !this.withAnim);
-  }
 }
