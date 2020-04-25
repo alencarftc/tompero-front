@@ -1,4 +1,7 @@
-header,
+header {
+    height: 75px;
+    background: #00fd72;
+}
 footer {
     height: 50px;
 }
@@ -10,7 +13,7 @@ footer {
 }
 
 main {
-    min-height: calc(100vh - 100px);
-    padding: 20px 0;
+    min-height: calc(100vh - 75px - 50px);
+    padding: 0;
 }
 

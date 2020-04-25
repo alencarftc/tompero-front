@@ -1,21 +1,20 @@
-ngb-carousel {
+mdb-carousel {
     margin: 0 auto;
     height: auto;
-    width: 100%;
     overflow: hidden;
-    height: inherit;
 }
 
-ngb-carousel,
 ::ng-deep .carousel-item,
 ::ng-deep .carousel-inner {
-    max-height: 800px;
+    max-height: 400px;
 }
 
-ngb-carousel img {
+mdb-carousel img {
     width: 100%;
     outline: none;
-    filter: brightness(0.5);
+    height: 100%;
+    transform: translate(0, -25%);
+    filter: brightness(0.75);
 }
 
 .carousel-inner {
@@ -39,16 +38,28 @@ ngb-carousel img {
 
 ::ng-deep {
 
+    .carousel-control-prev {
+        box-shadow: inset 70px 0 55px 5px black;
+    }
+    .carousel-control-next {
+        box-shadow: inset -70px 0 55px 5px black;
+    }
     .carousel-control-prev,
     .carousel-control-next {
         width: 7.5%;
         z-index: 20;
     }
+
+    .carousel ol.carousel-indicators{
+        z-index: 20;
+
+        li {
+            width: 10rem;
+            height: auto;
+        }
+    }
 }
 
-.carousel-indicators{
-    z-index: 20;
-}
 .carousel-caption {
     position: absolute;
     right: 0;
@@ -58,8 +69,9 @@ ngb-carousel img {
     height: fit-content;
 
     h3 {
-        font-size: 2em;
+        font-size: 2.75em;
         font-weight: 300;
+        font-style: italic;
     }
 
     a {

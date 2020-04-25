@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from './carousel.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [CarouselComponent],
-  imports: [CommonModule, NgbModule],
+  imports: [CommonModule, MDBBootstrapModule],
   exports: [CarouselComponent]
 })
 export class CarouselModule { }

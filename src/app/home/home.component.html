@@ -1,13 +1,54 @@
 <tp-default-layout [padding]="false">
     <div style="background-color: black;">
-        <tp-carousel></tp-carousel>
+        <tp-carousel [multi]="false"></tp-carousel>
     </div>
 
-    <ul>
-        <li *ngFor="let recipe of recipes">
-            <tp-recipe-item 
-                [recipe]="recipe">
-            </tp-recipe-item>
-        </li>
-    </ul>
+    <div class="row">
+        <section class="col-6">
+            <h3>Últimas receitas</h3>
+    
+            <ul>
+                <li *ngFor="let recipe of recipes">
+                    <tp-recipe-item 
+                        [recipe]="recipe">
+                    </tp-recipe-item>
+                </li>
+            </ul>
+        </section>
+        <section class="col-6">
+            <h3>Top receitas</h3>
+            <ul>
+                <li *ngFor="let recipe of recipes">
+                    <tp-recipe-item 
+                        [recipe]="recipe">
+                    </tp-recipe-item>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="row by-level">
+        <div class="left-side">
+            <h3>Por dificuldade</h3>
+            <ul class="buttons">
+                <li>
+                    <button>Iniciante</button>
+                </li>
+                <li>
+                    <button>Intermediário</button>
+                </li>
+                <li>
+                    <button>Avançado</button>
+                </li>
+            </ul>
+        </div>
+        <div class="recipes">
+            <div style="display: flex; flex-flow: row wrap;">
+                <img *ngFor="let recipe of recipes" 
+                    [src]="recipe.image"
+                    width="50%" 
+                    height="50%" />
+            </div>
+        </div>
+    </div>
 </tp-default-layout>

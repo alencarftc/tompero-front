@@ -1,0 +1,39 @@
+.row {
+    margin: 40px 30px;
+    display: flex;
+    flex-flow: nowrap;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+.by-level {
+
+    > div, 
+    .buttons {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    > div > ul li button {
+        padding: 10px 0;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        background: #00ca5b;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .recipes {
+        max-width: calc(240px * 3);
+        overflow-x: auto;
+        flex-flow: nowrap;
+    }
+}
+
+.left-side {
+    width: 240px;
+    margin-right: 20px;
+}

@@ -1,28 +1,20 @@
-<ngb-carousel
-  [showNavigationArrows]="true" 
-  [showNavigationIndicators]="true"
-  interval="8000"
-  [keyboard]="true"
-  [pauseOnHover]="true"
-  [wrap]="false"
-  [activeId]="'firstSlide'"
-  >
-  <ng-template ngbSlide id="firstSlide">
-    <div class="picsum-img-wrapper">
-      <img src="../../../../assets/1.jpeg" alt="Angular Carousel 1">
-    </div>
-    <div class="carousel-caption">
-      <h3>Frango grelhado à chapa grega</h3>
-      <a href="#">Ver receita.</a>
-    </div>
-  </ng-template>
-  <ng-template ngbSlide id="secondSlide">
-    <div class="picsum-img-wrapper">
-      <img src="../../../../assets/2.jpg" alt="Angular Carousel 2">
-    </div>
+<mdb-carousel [ngClass]="multi ? 'carousel-multi-item multi-animation' : ''" 
+  class="carousel slide carousel-fade" 
+  [type]="'carousel-thumbnails'" 
+  [animation]="'fade'">
+  
+  <mdb-carousel-item>
+    <img src="../../../../assets/2.jpg" alt="Angular Carousel 2">
     <div class="carousel-caption">
       <h3>Espaguete au tofu</h3>
-      <a href="#">Ver receita.</a>
+      <a href="#">Ver receita</a>
     </div>
-  </ng-template>
-</ngb-carousel>
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img src="../../../../assets/1.jpeg" alt="Angular Carousel 1">
+    <div class="carousel-caption">
+      <h3>Espaguete au tofu</h3>
+      <a href="#">Ver receita</a>
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>
