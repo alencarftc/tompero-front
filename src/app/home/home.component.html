@@ -1,54 +1,57 @@
 <tp-default-layout [padding]="false">
-    <div style="background-color: black;">
+    <div style="margin-top: 10px;">
         <tp-carousel [multi]="false"></tp-carousel>
     </div>
-
-    <div class="row">
-        <section class="col-6">
-            <h3>Últimas receitas</h3>
     
+    <div class="row">
+        <section class="col-sm-12 col-md-6 section-a">
+            <h3>Últimas receitas</h3>
             <ul>
                 <li *ngFor="let recipe of recipes">
-                    <tp-recipe-item 
-                        [recipe]="recipe">
-                    </tp-recipe-item>
+                    <tp-recipe-item [recipe]="recipe"></tp-recipe-item>
                 </li>
             </ul>
         </section>
-        <section class="col-6">
+        <section class="col-sm-12 col-md-6 section-b">
             <h3>Top receitas</h3>
             <ul>
                 <li *ngFor="let recipe of recipes">
-                    <tp-recipe-item 
-                        [recipe]="recipe">
-                    </tp-recipe-item>
+                    <tp-recipe-item [recipe]="recipe"></tp-recipe-item>
                 </li>
             </ul>
         </section>
     </div>
-
-    <div class="row by-level">
-        <div class="left-side">
+    
+    <div class="row">
+        <section class="column section-c col-sm-12 col-md-6">
             <h3>Por dificuldade</h3>
-            <ul class="buttons">
-                <li>
-                    <button>Iniciante</button>
-                </li>
-                <li>
-                    <button>Intermediário</button>
-                </li>
-                <li>
-                    <button>Avançado</button>
-                </li>
-            </ul>
-        </div>
-        <div class="recipes">
-            <div style="display: flex; flex-flow: row wrap;">
-                <img *ngFor="let recipe of recipes" 
-                    [src]="recipe.image"
-                    width="50%" 
-                    height="50%" />
+            <div class="recipes-by-level-row">
+                <ul class="left-side buttons column">
+                    <li>
+                        <button>Iniciante</button>
+                    </li>
+                    <li>
+                        <button>Intermediário</button>
+                    </li>
+                    <li>
+                        <button>Avançado</button>
+                    </li>
+                </ul>
+                <ul class="recipes">
+                    <li *ngFor="let recipe of recipes.slice(0, 3)">
+                        <tp-recipe-item [recipe]="recipe"></tp-recipe-item>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </section>
+        
+        <section class="footer column section-d col-sm-12 col-md-6">
+            <h3>Siga-nos nas redes sociais</h3>
+            <ul class="row">
+                <li>facebook</li>
+                <li>instagram</li>
+                <li>twitter</li>
+            </ul>
+        </section> 
     </div>
 </tp-default-layout>

@@ -1,3 +1,5 @@
+@import 'src/assets/sass/variables';
+
 article {
     max-width: 220px;
     min-width: 220px;
@@ -25,7 +27,7 @@ article {
         display: inline-block;
         text-align: right;
         width: 100%;
-        color: darken(#00fd72, 10%);
+        color: darken(#81ca5e, 10%);
         text-decoration: none;
         font-size: 1.1em;
         padding: 0 20px 20px 0;

@@ -1,27 +1,34 @@
+@import 'src/assets/sass/variables';
+
 .row {
-    margin: 40px 30px;
     display: flex;
-    flex-flow: nowrap;
+    margin: 0 30px;
+}
+
+.section-a,
+.section-b,
+.section-c,
+.section-d {
+    margin: 20px auto 10px;
 }
 
 h3 {
     font-weight: 700;
+    color: $pri-color;
 }
 
-.by-level {
+.section-c {
 
-    > div, 
     .buttons {
         display: flex;
-        flex-flow: column nowrap;
     }
 
-    > div > ul li button {
+    .buttons button {
         padding: 10px 0;
         border: none;
         border-radius: 3px;
         color: #fff;
-        background: #00ca5b;
+        background: $pri-color;
         margin: 10px 0;
         width: 100%;
     }
@@ -33,7 +40,24 @@ h3 {
     }
 }
 
+.footer {
+
+    ul li {
+        margin: 0 30px;
+    }
+}
+
 .left-side {
-    width: 240px;
+    width: 220px;
     margin-right: 20px;
+}
+
+.column {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.recipes-by-level-row {
+    margin: 0;
+    display: flex;
 }
