@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./default-layout.component.scss']
 })
 export class DefaultLayoutComponent {
-  @Input() padding: boolean
+  @Input() padding: boolean;
+  @Input() title: string;
 }

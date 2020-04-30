@@ -1,0 +1,20 @@
+<tp-default-layout [padding]="true" title="Nova receita">
+    <section>
+        <h3>Vamos lá!</h3>
+        <p>Nos campos abaixo, insira as informações da sua receita.</p>
+        <p>Lembre-se de deixar bem explicado e prover imagens de alta qualidade. (tamanho mínimo: 1080px) </p>
+    </section>
+
+    <form [formGroup]="recipeForm">
+
+        <mat-form-field appearance="standard">
+            <mat-label>Título</mat-label>
+            <input matInput placeholder="Baião de dois com queijo">
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+            <mat-label>Título</mat-label>
+            <input matInput placeholder="Placeholder">
+        </mat-form-field>
+    </form>
+</tp-default-layout>

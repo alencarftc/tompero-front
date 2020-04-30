@@ -1,19 +1,31 @@
-<nav>
-    <h1>
-        <img src="../../../assets/lolgo.svg" alt="Tompero Logo">
-    </h1>
-    
-    <div class="row">
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Adicionar receita</a></li>
+<div class="wrapper row space-between">
+    <a routerLink="/inicio" style="height: 65px;">
+        <h1><img src="../../../assets/logo.png" alt="Tompero Logo"></h1>
+    </a>
+    <!-- <button (click)="toggle()" class="toggle-btn">
+        <mat-icon>menu</mat-icon>
+    </button> -->
+    <!-- <nav id="menu" class="row" *ngIf="isOpen" [ngClass]="isOpen ? 'open' : ''"> -->
+    <nav id="menu" class="row">
+        <ul class="row social">
+            <li><a href="https://www.instagram.com/dev.tompero"><img src="../../../assets/instagram.svg"></a></li>
+            <li><a href="https://twitter.com/TomPero9"><img src="../../../assets/twitter.svg"></a></li>
+            <li><a href="https://www.facebook.com/dev.tompero"><img src="../../../assets/facebook.svg"></a></li>
+        </ul>
+        <div class="row link-and-search space-between">
+            <ul class="row links">
+                <li><a routerLink="/sobre">Sobre</a></li>
+                <li><a routerLink="/receitas">Receitas</a></li>
+                <li class="submit-recipe"><a routerLink="/receitas/novo">Enviar Receita</a></li>
             </ul>
-            <ul>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Facebook</a></li>
-            </ul>
-        </nav>
-    </div>
-</nav>
+            <div class="search row">
+                <div class="search-inner">
+                    <input type="text" placeholder="Buscar receita" />
+                    <button>
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

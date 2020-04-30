@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
 import { DefaultLayoutComponent } from './default-layout.component';
+import { HeaderModule } from '../header/header.module';
+import { FooterModule } from '../footer/footer.module';
 
 @NgModule({
   declarations: [
     DefaultLayoutComponent, 
-    HeaderComponent, 
-    FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HeaderModule,
+    FooterModule
   ],
   exports: [
     DefaultLayoutComponent, 
-    HeaderComponent, 
-    FooterComponent
   ]
 })
 export class DefaultLayoutModule { }

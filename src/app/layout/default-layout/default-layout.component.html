@@ -3,6 +3,11 @@
 </header>
 
 <main [ngClass]="padding ? 'padding-true' : ''">
+    <div class="image-title" *ngIf="title">
+        <img src="../../../assets/img/2.jpg" />
+        <h2 class="title">{{ title }}</h2>
+    </div>
+
     <ng-content></ng-content>
 </main>
 

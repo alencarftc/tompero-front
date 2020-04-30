@@ -1,1 +1,8 @@
-<p>recipe-list works!</p>
+<div class="container-fluid">
+    <ul class="row">
+        <li *ngFor="let recipe of recipes.slice(0, limit ? limit : recipes.length)" [ngClass]="colClass">
+            <tp-recipe-item [recipe]="recipe"></tp-recipe-item>
+        </li>
+    </ul>
+</div>
+

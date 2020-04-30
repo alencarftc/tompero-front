@@ -1,0 +1,27 @@
+@import 'src/assets/sass/variables';
+
+
+h3 {
+    font-size: 3em;
+    color: $pri-color;
+    margin: 20px 0 30px;
+}
+
+p {
+    font-size: 1.5em;
+    color: #333;
+}
+
+section {
+    margin: 20px 0;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+
+    mat-form-field {
+        max-width: 350px;
+        width: 100%;
+    }
+}

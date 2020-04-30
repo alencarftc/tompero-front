@@ -1,0 +1,36 @@
+
+@import 'src/assets/sass/variables';
+
+ul {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+
+    li {
+        margin: 5px 10px;
+    }
+}
+
+h3 {
+    font-size: 1.25em;
+    margin-bottom: 0;
+    margin-right: 30px;
+    color: #999;
+}
+
+button {
+    background: $sec-color;
+}
+
+.difficulty-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 30px;
+
+    @media screen and (max-width: 528px) {
+        flex-flow: column nowrap;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}

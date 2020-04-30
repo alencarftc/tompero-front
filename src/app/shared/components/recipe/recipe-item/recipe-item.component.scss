@@ -1,35 +1,64 @@
 @import 'src/assets/sass/variables';
 
+.row {
+    display: flex;
+    flex-flow: nowrap;
+    margin: 0;
+}
+
 article {
-    max-width: 220px;
-    min-width: 220px;
-    height: auto;
+    height: 350px;
+    width: inherit;
     border: 1px solid #eee;
     border-radius: 3px;
     margin: 10px;
+    position: relative;
+    overflow: hidden;
 
-    h4 {
-        font-size: 1.15em;
-        line-height: 1.5;
-        color: #353535;
-        padding: 15px 0 0 20px;
-        font-weight: 700;
-        margin-bottom: 25px; 
+    img {
+        height: 100%;
+        width: auto;
     }
 
-    p {
-        color: #a9a9a9;
-        font-size: 0.9em;
-        margin: 20px;
-    }
-
-    a {
-        display: inline-block;
-        text-align: right;
+    .info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        color: darken(#81ca5e, 10%);
-        text-decoration: none;
-        font-size: 1.1em;
-        padding: 0 20px 20px 0;
+        background: #e6e6e6d4;
+        padding: 5px 10px;
+        border-bottom: 3px solid $pri-color;
+
+        h4 {
+            font-size: 1.5em;
+            color: $pri-color;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        mat-icon,
+        a {
+            color: $pri-color;
+        }
+
+        mat-icon {
+            font-size: .85em;
+            width: fit-content;
+        }
+
+        a {
+            font-weight: 700;
+
+            span {
+                font-weight: 300;
+                font-size: .85em;
+                color: darken($pri-color, 5%);
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }

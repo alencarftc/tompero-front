@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'tp-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  private _isOpen: boolean;
 
-  constructor() { }
-
-  ngOnInit() {
+  toggle(){
+    this._isOpen = !this._isOpen;
   }
 
+  get isOpen(){
+    return this._isOpen;
+  }
 }

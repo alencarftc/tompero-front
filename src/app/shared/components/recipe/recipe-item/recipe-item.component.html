@@ -1,6 +1,14 @@
 <article>
-    <h4>{{ recipe.title }}</h4>
-    <tp-image [image]="recipe.image"></tp-image>
-    <p>{{ recipe.description }}</p>
-    <a [href]="recipe.url">Ver receita</a>
+    <img [src]="recipe.image">
+    <div class="info">
+        <h4>{{ recipe.title }}</h4>
+        <div class="row space-between">
+            <a [href]="recipe.url">Ver receita <span>></span></a>
+            <div class="row">
+                <span *ngFor="let s of [].constructor(recipe.rating)">
+                    <mat-icon>star</mat-icon>
+                </span>
+            </div>
+        </div>
+    </div>
 </article>

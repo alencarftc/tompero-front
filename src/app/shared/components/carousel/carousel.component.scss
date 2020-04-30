@@ -8,15 +8,22 @@ mdb-carousel {
 
 ::ng-deep .carousel-item,
 ::ng-deep .carousel-inner {
-    max-height: 400px;
+    max-height: 500px;
+
+    @media screen and (max-width: 760px) {
+        height: 400px;
+    }
 }
 
 mdb-carousel img {
     width: 100%;
     outline: none;
     height: 100%;
-    transform: translate(0, -25%);
     filter: brightness(0.75);
+
+    @media screen and (min-width: 1020px) {
+        transform: translate(0, -25%);
+    }
 }
 
 .carousel-inner {
@@ -40,11 +47,11 @@ mdb-carousel img {
 
 ::ng-deep {
 
-    .carousel-control-prev {
-        box-shadow: inset 70px 0 55px 5px black;
+    .carousel-control-prev:hover {
+        box-shadow: inset 70px 0 55px 5px #61252580;
     }
-    .carousel-control-next {
-        box-shadow: inset -70px 0 55px 5px black;
+    .carousel-control-next:hover {
+        box-shadow: inset -70px 0 55px 5px #61252580;
     }
     .carousel-control-prev,
     .carousel-control-next {
@@ -53,6 +60,7 @@ mdb-carousel img {
     }
 
     .carousel ol.carousel-indicators{
+        display: none;
         z-index: 20;
 
         li {
@@ -65,27 +73,45 @@ mdb-carousel img {
 .carousel-caption {
     position: absolute;
     right: 0;
-    bottom: 30%;
-    left: 15%;
+    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12.5%;
     width: fit-content;
     height: fit-content;
-    background: rgba(159, 215, 132, .6);
-    padding: 20px;
+    background: rgba(132, 195, 74, 0.8);
+    text-align: left;
+    padding: 20px 25px;
+    font-size: calc(.5em + .75vmax);
 
-    h3 {
-        font-size: 2.75em;
-        font-weight: 300;
-        font-style: italic;
-        filter: drop-shadow(2px 3px 1px black)
+    @media screen and (max-width: 760px)  {
+        left: 50%;
+        top: 50%;
+        bottom: unset;
+        right: unset;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
 
-    a {
-        font-size: 1.25em;
+    h3 {
+        font-size: 2em;
         font-weight: 700;
-        color: lighten($pri-color, 10%);
-        text-align: left;
-        width: 100%;
-        display: inline-block;
-        filter: drop-shadow(2px 3px 1px black)
+        font-style: italic;
+        font-family: $pri-title-font;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 0 10px;
+        border: 1px solid #f1f1f1;
+        background: none;
+        padding-bottom: 3px;
+
+        a {
+            font-size: .725em;
+            color: #f1f1f1;
+            font-weight: 700;
+        }
     }
 }
