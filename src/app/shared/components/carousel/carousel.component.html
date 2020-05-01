@@ -1,21 +1,11 @@
-<mdb-carousel [ngClass]="multi ? 'carousel-multi-item multi-animation' : ''" 
-  class="carousel slide carousel-fade" 
+<mdb-carousel class="carousel slide carousel-fade" 
   [type]="'carousel-thumbnails'" 
   [animation]="'fade'">
   
-  <mdb-carousel-item>
-    <img src="https://i.pinimg.com/originals/cb/99/4f/cb994f810f927c2057d5c2526eb11d82.jpg" alt="Angular Carousel 2">
+  <mdb-carousel-item *ngFor="let item of items">
+    <img [src]="item.image" [alt]="item.image">
     <div class="carousel-caption">
-      <h3>Red fruits icecream</h3>
-      <button>
-        <a href="#">Ir para a receita</a>
-      </button>
-    </div>
-  </mdb-carousel-item>
-  <mdb-carousel-item>
-    <img src="https://img5.goodfon.com/wallpaper/nbig/1/90/syr-makarony-tarelka-miaso.jpg" alt="Angular Carousel 1">
-    <div class="carousel-caption">
-      <h3>Spaghetti with cheese</h3>
+      <h3>{{ item.title }}</h3>
       <button>
         <a href="#">Ir para a receita</a>
       </button>

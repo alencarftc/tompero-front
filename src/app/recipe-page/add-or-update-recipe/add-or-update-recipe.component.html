@@ -1,20 +1,70 @@
 <tp-default-layout [padding]="true" title="Nova receita">
     <section>
-        <h3>Vamos lá!</h3>
-        <p>Nos campos abaixo, insira as informações da sua receita.</p>
-        <p>Lembre-se de deixar bem explicado e prover imagens de alta qualidade. (tamanho mínimo: 1080px) </p>
+        <h3>Cadê o Tompero?!</h3>
+        <p>Nos campos abaixo, insira as informações da sua receita, de forma consisa e bem coerente.</p>
     </section>
+    
+    <form [formGroup]="recipeForm" (ngSubmit)="submit()">
+        <div class="column">
+            <div class="row wrapper">
+                <div class="image-field">
+                    <label for="file" class="image-box" [ngClass]="!imageUploaded ? 'empty' : ''">
+                        <span *ngIf="!imageUploaded"><b>Imagem da receita</b><br/><br/>Tamanho recomendado: 1080x1080</span>
+                        <img *ngIf="imageUploaded" [src]="imageUploaded" />
+                        <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+                    </label>
+                    <mat-error *ngIf="!imageUploaded">Sua receita deve possuir uma imagem de capa.</mat-error>
+                </div>
+                
+                <div class="column">
+                    <div class="row">
+                        <mat-form-field appearance="standard">
+                            <mat-label>Título da Receita</mat-label>
+                            <input matInput class="title" formControlName="recipe_title" placeholder="Baião de dois com queijo" autocomplete="off">
+                            <mat-error *ngIf="recipe_title.hasError('maxlength')">O título não pode ultrapassar 40 carácteres.</mat-error>
+                            <mat-error *ngIf="recipe_title.hasError('required')">Sua receita deve possuir um título.</mat-error>
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance="standard">
+                            <mat-label>Dificuldade</mat-label>
+                            <mat-select formControlName="difficulty">
+                                <mat-option value="1">Iniciante</mat-option>
+                                <mat-option value="2">Intermediário</mat-option>
+                                <mat-option value="3">Avançado</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance="standard">
+                            <mat-label>Ingredientes</mat-label>
+                            <input matInput formControlName="ingredients" placeholder="2 tomates, 1/2 pimentão..." autocomplete="off">
+                            <mat-error *ngIf="ingredients.hasError('required')">Informe os ingredientes necessários.</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <mat-form-field appearance="standard">
+                            <mat-label>Modo de preparo</mat-label>
+                            <textarea matInput 
+                                cdkTextareaAutosize
+                                #autosize="cdkTextareaAutosize"
+                                cdkAutosizeMinRows="1"
+                                cdkAutosizeMaxRows="5"
+                                formControlName="preparation" 
+                                placeholder="Corte os tomates em rodelas, pique as cebolas..." 
+                                autocomplete="off">
+                            </textarea>
+                
+                            <mat-error *ngIf="preparation.hasError('required')">Informe como preparar a sua receita.</mat-error>
+                        </mat-form-field>
+                        
+                        <mat-form-field appearance="standard">
+                            <mat-label>Observações</mat-label>
+                            <input matInput formControlName="hint" placeholder="Besuntar a forma com manteiga antes do preparo..." autocomplete="off">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
 
-    <form [formGroup]="recipeForm">
-
-        <mat-form-field appearance="standard">
-            <mat-label>Título</mat-label>
-            <input matInput placeholder="Baião de dois com queijo">
-        </mat-form-field>
-
-        <mat-form-field appearance="standard">
-            <mat-label>Título</mat-label>
-            <input matInput placeholder="Placeholder">
-        </mat-form-field>
+            <button mat-button type="submit">Cadastrar</button>
+        </div>
     </form>
 </tp-default-layout>

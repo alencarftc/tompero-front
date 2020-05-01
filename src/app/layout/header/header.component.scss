@@ -131,11 +131,6 @@ ul {
     }
 }
 
-.search-inner {
-    position: absolute;
-    top: 15px;
-    z-index: 10000;
-}
 .search {
     position: relative;
     display: flex;
@@ -145,6 +140,9 @@ ul {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        position: absolute;
+        top: 15px;
+        z-index: 10000;
 
         @media screen and (max-width: 768px) {
             input {
@@ -161,6 +159,7 @@ ul {
             width: 100%;
             border-bottom-left-radius: 15px;
             color: $pri-color;
+            font-size: 1.15em;
     
             &::placeholder {
                 color: #ccc;
@@ -181,7 +180,6 @@ ul {
             }
         }
     }
-
 }
 
 img {
